@@ -50,6 +50,20 @@ filetype plugin indent on	" required
 
 
 """""""""""
+" General "
+"""""""""""
+set tags=tags;/         " serach up the directory for tags
+set shiftwidth=2        " two spaces indent
+set tabstop=2           " number of spaces per tab in display
+set expandtab           " substitute spaces for tabs
+
+" Sets a maximum number of columns
+"set colorcolumn=81,101  " absolute columns to highlight "
+"set colorcolumn=+1,+21  " relative (to textwidth) columns to highlight "
+
+
+
+"""""""""""
 " Plugins "
 """""""""""
 
