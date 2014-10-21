@@ -1,9 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-""""""""""""""""""""""""""""""""""
-" Vundle
-""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
+" Vundle Setup and Plugins "
+""""""""""""""""""""""""""""
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -11,28 +11,62 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" To start with:
+" General "
+"""""""""""
+" set good default
 Bundle 'tpope/vim-sensible'
 
-" General
+" navigation tree
 Bundle 'scrooloose/nerdtree'
+
+" fuzzy search
 Bundle 'kien/ctrlp.vim'
+
+" nice status bar
 Bundle 'bling/vim-airline'
+
+" file navigation - using brackets, like: [n and ]n
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-eunuch'
+
+" unix commands, like :Mkdir and :Move
+"Bundle 'tpope/vim-eunuch'
+
+" completion using <TAB> in INSERT mode.
 Bundle 'ervandew/supertab'
+
+" used for tabulating code. The command is :Tabularized
 Bundle 'godlygeek/tabular'
+
+" Solarized color scheme
 Bundle 'altercation/vim-colors-solarized'
 
-" Coding
-Bundle 'tpope/vim-fugitive'
+
+" Coding "
+""""""""""
+" git wrapper (:Gstatus, :Gmove, etc)
+Bundle 'tpope/vim-fugitive' 
+
+" ack perl module. Used for grep.
 Bundle 'mileszs/ack.vim'
+
+" shows tags on a split window. The main command is :TagbarToggle
 Bundle 'majutsushi/tagbar'
+
+" syntax checker
 Bundle 'scrooloose/syntastic'
+
+" manage arguments (Commands: daa, cia, via)
 Bundle 'vim-scripts/argtextobj.vim'
+
+" surrounds stuff with parenthensis, brakets, etc
 Bundle 'tpope/vim-surround'
 
-" Programming languages
+" navigate from .c to .h and vice-versa. The main commands is :A
+Bundle 'vim-scripts/a.vim'
+
+
+" Programming Languages "
+""""""""""""""""""""""""" 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/c.vim'
@@ -40,6 +74,7 @@ Bundle 'vim-scripts/c.vim'
 " All plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
+
 
 """""""""""""""""""""
 " Syntax and indent "
@@ -63,9 +98,9 @@ set expandtab           " substitute spaces for tabs
 
 
 
-"""""""""""
-" Plugins "
-"""""""""""
+"""""""""""""""""""
+" Plugins Configs "
+"""""""""""""""""""
 
 " For vim-sensible, keep all the undo files in the same place
 set undodir^=~/.vim/undo
