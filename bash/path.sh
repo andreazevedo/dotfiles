@@ -1,4 +1,7 @@
-__current_branch ()
+##########
+# PROMPT #
+##########
+__current_branch()
 {
   # find out if we're in a git or hg repo by looking for the control dir
   local d git hg
@@ -44,14 +47,31 @@ __current_branch ()
   fi
 }
 
-_show_branch()
+parse_branch()
 {
   if [[ -n $(__current_branch) ]]; then
     echo "($(__current_branch)) "
   fi
 }
 
-export PS1="\u@\H \w \$(_show_branch)\$ "
-PS2='> '
-PS4='+ '
+customize_prompt()
+{
+  local PURPLE="\[\033[0;35m\]"
+  local ORANGE="\[\033[1;31m\]"
+  local GREEN="\[\033[0;32m\]"
+  local RESET="\[\033[0m\]"
 
+  export PS1="$PURPLE\u$RESET@$ORANGE\H $GREEN\w $RESET\$(parse_branch)\$ "
+  PS2='> '
+  PS4='+ '
+}
+
+customize_prompt
+
+
+#############
+# UTILITIES #
+#############
+# LS
+alias ls='ls --color'
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
