@@ -116,5 +116,9 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_follow_symlinks=1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MaxOSX/Linux
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/\.git/*,*/\.hg/* " MaxOSX/Linux
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
