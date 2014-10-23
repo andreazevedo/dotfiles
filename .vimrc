@@ -112,9 +112,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nmap <leader>m :NERDTreeFind<CR>
 
 " CtrlP
-let g:ctrlp_map = '<c-p>'
-nmap <leader>fd :CtrlP 
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_map = '<c-p>'
+nmap <leader>pd :CtrlP 
+nmap <leader>pb :CtrlPBuffer<CR>
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
