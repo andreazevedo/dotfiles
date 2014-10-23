@@ -84,9 +84,10 @@ filetype plugin indent on	" required
 "colorscheme solarized
 
 
-"""""""""""
-" General "
-"""""""""""
+""""""""""""""""""
+" General Config "
+""""""""""""""""""
+let mapleader=","       " the default leader (backslash) is too far away on keyboard!
 set tags=tags;/         " serach up the directory for tags
 set shiftwidth=2        " two spaces indent
 set tabstop=2           " number of spaces per tab in display
@@ -108,17 +109,19 @@ set undodir^=~/.vim/undo
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+nmap <leader>m :NERDTreeFind<CR>
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
+nmap <leader>fd :CtrlP 
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/\.git/*,*/\.hg/* " MaxOSX/Linux
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+if exists("g:ctrl_user_command")
+  unlet g:ctrlp_user_command
 endif
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/\.git/*,*/\.hg/* " MaxOSX/Linux
 
