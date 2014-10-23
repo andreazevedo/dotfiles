@@ -109,7 +109,7 @@ set undodir^=~/.vim/undo
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nmap <leader>m :NERDTreeFind<CR>
+nmap <leader>nm :NERDTreeFind<CR>
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlP'
