@@ -87,11 +87,12 @@ filetype plugin indent on	" required
 """"""""""""""""""
 " General Config "
 """"""""""""""""""
-let mapleader=","       " the default leader (backslash) is too far away on keyboard!
-set tags=tags;/         " serach up the directory for tags
-set shiftwidth=2        " two spaces indent
-set tabstop=2           " number of spaces per tab in display
-set expandtab           " substitute spaces for tabs
+let mapleader=","  " the default leader (backslash) is too far away on keyboard!
+set tags=tags;/    " serach up the directory for tags
+set shiftwidth=2   " two spaces indent
+set tabstop=2      " number of spaces per tab in display
+set expandtab      " substitute spaces for tabs
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 " Sets a maximum number of columns
 "set colorcolumn=81,101  " absolute columns to highlight "
@@ -124,5 +125,5 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if exists("g:ctrl_user_command")
   unlet g:ctrlp_user_command
 endif
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/\.git/*,*/\.hg/* " MaxOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
