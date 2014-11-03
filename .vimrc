@@ -64,6 +64,9 @@ Bundle 'tpope/vim-surround'
 " navigate from .c to .h and vice-versa. The main commands is :A
 Bundle 'vim-scripts/a.vim'
 
+" code completition - OBS: Additional steps required for C code completition.
+Bundle 'Valloric/YouCompleteMe'
+
 
 " Programming Languages "
 """"""""""""""""""""""""" 
@@ -126,4 +129,8 @@ if exists("g:ctrl_user_command")
   unlet g:ctrlp_user_command
 endif
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" Syntastic
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
