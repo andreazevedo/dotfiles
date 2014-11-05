@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-dotfiles for vim, bash and zsh
+dotfiles for vim, tmux and bash
