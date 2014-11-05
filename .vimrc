@@ -98,8 +98,8 @@ set expandtab      " substitute spaces for tabs
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 " Sets a maximum number of columns
-"set colorcolumn=81,101  " absolute columns to highlight "
-"set colorcolumn=+1,+21  " relative (to textwidth) columns to highlight "
+"set colorcolumn=81 " absolute columns to highlight "
+"set colorcolumn=+1 " relative (to textwidth) columns to highlight "
 
 
 
