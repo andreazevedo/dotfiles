@@ -136,5 +136,5 @@ let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.dotfiles/vim/plugins/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = $HOME . '/.dotfiles/vim/plugins/YouCompleteMe/.ycm_extra_conf.py'
 
