@@ -3,8 +3,6 @@
 # Only run on first install
 if [ ! -d "$HOME/.dotfiles" ]; then
   echo "Installing andreazevedo/dotfiles for the first time."
-  git clone https://github.com/andreazevedo/dotfiles.git "$HOME/.dotfiles"
-  cd "$HOME/.dotfiles"
 
   echo "Installing dependencies."
   if hash brew 2> /dev/null; then
@@ -15,6 +13,9 @@ if [ ! -d "$HOME/.dotfiles" ]; then
   elif hash yum 2> /dev/null; then
     sudo yum install git cmake
   fi
+
+  git clone https://github.com/andreazevedo/dotfiles.git "$HOME/.dotfiles"
+  cd "$HOME/.dotfiles"
 fi
 
 
