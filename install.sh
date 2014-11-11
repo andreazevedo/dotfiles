@@ -9,7 +9,7 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     brew update
     brew install git cmake
   elif hash apt-get 2> /dev/null; then
-    sudo apt-get install git cmake build-essential
+    sudo apt-get install git cmake build-essential python-dev
   elif hash yum 2> /dev/null; then
     sudo yum install git cmake
   fi
