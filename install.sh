@@ -7,11 +7,11 @@ if [ ! -d "$HOME/.dotfiles" ]; then
   echo "Installing dependencies."
   if hash brew 2> /dev/null; then
     brew update
-    brew install git cmake
+    brew install git cmake macvim
   elif hash apt-get 2> /dev/null; then
     sudo apt-get install git cmake build-essential python-dev
   elif hash yum 2> /dev/null; then
-    sudo yum install git cmake
+    sudo yum install git cmake vim gcc clang
   fi
 
   git clone https://github.com/andreazevedo/dotfiles.git "$HOME/.dotfiles"
