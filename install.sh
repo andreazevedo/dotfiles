@@ -9,6 +9,7 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     brew update
     brew install git cmake macvim
   elif hash apt-get 2> /dev/null; then
+    sudo apt-get update
     sudo apt-get install git cmake build-essential python-dev
   elif hash yum 2> /dev/null; then
     sudo yum install git cmake vim gcc clang
