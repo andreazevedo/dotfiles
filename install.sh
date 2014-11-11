@@ -10,9 +10,9 @@ if [ ! -d "$HOME/.dotfiles" ]; then
   if hash brew 2> /dev/null; then
     brew update
     brew install git cmake
-  else if hash apt-get 2> /dev/null; then
+  elif hash apt-get 2> /dev/null; then
     sudo apt-get install git cmake build-essential
-  else if hash yum 2> /dev/null; then
+  elif hash yum 2> /dev/null; then
     sudo yum install git cmake
   fi
 fi
