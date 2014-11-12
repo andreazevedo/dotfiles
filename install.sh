@@ -53,9 +53,9 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
 fi
 echo "Installing vim plugins. This may take some time."
 vim +PluginInstall +qall
-echo "Installing YouCompleteMe."
-cd $HOME/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
+#echo "Installing YouCompleteMe."
+#cd $HOME/.vim/bundle/YouCompleteMe
+#./install.sh --clang-completer
 
 # Finishing
 echo "dotfiles installed successfully!"
