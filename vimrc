@@ -67,12 +67,16 @@ Bundle 'vim-scripts/a.vim'
 " code completition - OBS: Additional steps required for C code completition.
 Bundle 'Valloric/YouCompleteMe'
 
+" Asynchronous build and test dispatcher
+Bundle 'tpope/vim-dispatch'
+
 
 " Programming Languages "
 """"""""""""""""""""""""" 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/c.vim'
+Bundle 'OmniSharp/omnisharp-vim'
 
 " All plugins must be added before the following line
 call vundle#end()		" required
