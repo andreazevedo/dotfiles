@@ -87,8 +87,8 @@ filetype plugin indent on	" required
 " Syntax and indent "
 """""""""""""""""""""
 "syntax enable
-"set background=dark
-"colorscheme solarized
+set background=dark
+colorscheme solarized
 
 
 """"""""""""""""""
