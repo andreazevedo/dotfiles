@@ -29,6 +29,16 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 echo source \$HOME/.dotfiles/bashrc > $HOME/.bashrc
 
+# Install gitconfig
+if [ -f "$HOME/.gitconfig" ]; then
+  if [ -f "$HOME/.gitconfig.bkp" ]; then
+    rm -f "$HOME/.gitconfig.bkp"
+  fi
+  mv "$HOME/.gitconfig" "$HOME/.gitconfig.bkp"
+fi
+echo "[include]
+  path = \$HOME/.dotfiles/gitconfig" > $HOME/.gitconfig
+
 # Install tmux.conf
 if [ -f "$HOME/.tmux.conf" ]; then
   if [ -f "$HOME/.tmux.conf.bkp" ]; then
