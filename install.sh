@@ -37,7 +37,7 @@ if [ -f "$HOME/.gitconfig" ]; then
   mv "$HOME/.gitconfig" "$HOME/.gitconfig.bkp"
 fi
 echo "[include]
-  path = \$HOME/.dotfiles/gitconfig" > $HOME/.gitconfig
+  path = ~/.dotfiles/gitconfig" > $HOME/.gitconfig
 
 # Install tmux.conf
 if [ -f "$HOME/.tmux.conf" ]; then
