@@ -100,6 +100,9 @@ set shiftwidth=2   " two spaces indent
 set tabstop=2      " number of spaces per tab in display
 set expandtab      " substitute spaces for tabs
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set ignorecase     " disabling case-sensitivity
+set smartcase      " enabling smart-case. if all in lowercase, its insensitive
+set incsearch      " enabling incremental search
 
 " Sets a maximum number of columns
 "set colorcolumn=81 " absolute columns to highlight "
