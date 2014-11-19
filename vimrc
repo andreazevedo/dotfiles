@@ -136,6 +136,7 @@ if exists("g:ctrl_user_command")
   unlet g:ctrlp_user_command
 endif
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_clear_cache_on_exit = 1
 
 " Syntastic
 let g:syntastic_cpp_check_header = 1
