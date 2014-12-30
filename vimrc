@@ -105,7 +105,7 @@ set smartcase      " enable smart-case. if all in lowercase, its insensitive
 set incsearch      " enable incremental search
 
 " Sets a maximum number of columns
-"set colorcolumn=81 " absolute columns to highlight "
+set colorcolumn=81 " absolute columns to highlight "
 "set colorcolumn=+1 " relative (to textwidth) columns to highlight "
 
 
