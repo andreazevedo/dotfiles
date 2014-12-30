@@ -103,6 +103,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set ignorecase     " disable case-sensitivity
 set smartcase      " enable smart-case. if all in lowercase, its insensitive
 set incsearch      " enable incremental search
+set hlsearch       " enable search highlighting
 
 " Sets a maximum number of columns
 set colorcolumn=81 " absolute columns to highlight "
