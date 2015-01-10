@@ -64,9 +64,6 @@ Bundle 'tpope/vim-surround'
 " navigate from .c to .h and vice-versa. The main commands is :A
 Bundle 'vim-scripts/a.vim'
 
-" code completition - OBS: Additional steps required for C code completition.
-"Bundle 'Valloric/YouCompleteMe'
-
 " Asynchronous build and test dispatcher
 Bundle 'tpope/vim-dispatch'
 
@@ -143,7 +140,3 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
-
-" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = $HOME . '/.dotfiles/vim/plugins/YouCompleteMe/.ycm_extra_conf.py'
-
