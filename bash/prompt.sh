@@ -62,7 +62,7 @@ customize_prompt()
   local CYAN="\[\033[1;36m\]"
   local RESET="\[\033[0m\]"
 
-  export PS1="$PURPLE\u$RESET@$ORANGE\H $GREEN\w $CYAN\$(parse_branch)$RESET\$ "
+  export PS1="$PURPLE\u$RESET@$ORANGE\h $GREEN\w $CYAN\$(parse_branch)$RESET\$ "
   PS2='> '
   PS4='+ '
 }
