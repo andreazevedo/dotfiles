@@ -1,3 +1,5 @@
+#!/bash/sh
+
 ###############################
 # GIT, MERCUARIAL AND COLORS  #
 ###############################
@@ -49,7 +51,7 @@ __current_branch()
 
 parse_branch()
 {
-  if [[ -n $(__current_branch) ]]; then
+  if [ -n "$(__current_branch)" ]; then
     echo "($(__current_branch)) "
   fi
 }

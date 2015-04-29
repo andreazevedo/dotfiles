@@ -1,1 +1,3 @@
+#!/bash/sh
+
 HISTSIZE=130000 HISTFILESIZE=-1
