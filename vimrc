@@ -110,11 +110,17 @@ set tags=tags;/    " serach up the directory for tags
 set shiftwidth=2   " two spaces indent
 set tabstop=2      " number of spaces per tab in display
 set expandtab      " substitute spaces for tabs
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set ignorecase     " disable case-sensitivity
 set smartcase      " enable smart-case. if all in lowercase, its insensitive
 set incsearch      " enable incremental search
 set hlsearch       " enable search highlighting
+
+" Files to be ignored by VIM, including NERDTree and CtrlP plugings
+set wildignore=*/tmp/*,*.swp,*.zip                          " general stuff
+set wildignore+=*.so,*.lo,*.o,*.a                           " C/C++
+set wildignore+=autom4te.cache,aclocal.m4,config.log        " autotools (cont.)
+set wildignore+=config.status,depcomp,install-sh            " autotools (cont.)
+set wildignore+=Makefile.in,missing                         " autotools (cont.)
 
 " Sets a maximum number of columns
 set colorcolumn=81 " absolute columns to highlight "
@@ -133,6 +139,7 @@ set undodir^=~/.vim/undo
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <leader>nm :NERDTreeFind<CR>
+let g:NERDTreeRespectWildIgnore=1
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlP'
