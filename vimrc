@@ -28,9 +28,6 @@ Bundle 'bling/vim-airline'
 " file navigation - using brackets, like: [n and ]n
 Bundle 'tpope/vim-unimpaired'
 
-" unix commands, like :Mkdir and :Move
-"Bundle 'tpope/vim-eunuch'
-
 " completion using <TAB> in INSERT mode.
 Bundle 'ervandew/supertab'
 
@@ -43,9 +40,6 @@ Bundle 'altercation/vim-colors-solarized'
 
 " Coding "
 """"""""""
-" git wrapper (:Gstatus, :Gmove, etc)
-Bundle 'tpope/vim-fugitive' 
-
 " ack perl module. Used for grep.
 Bundle 'mileszs/ack.vim'
 
@@ -70,10 +64,8 @@ Bundle 'tpope/vim-dispatch'
 
 " Programming Languages "
 """"""""""""""""""""""""" 
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/c.vim'
-"Bundle 'OmniSharp/omnisharp-vim'
 
 " All plugins must be added before the following line
 call vundle#end()		" required
