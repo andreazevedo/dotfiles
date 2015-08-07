@@ -108,9 +108,9 @@ set incsearch      " enable incremental search
 set hlsearch       " enable search highlighting
 
 " Files to be ignored by VIM, including NERDTree and CtrlP plugings
-set wildignore=*/tmp/*,*.swp,*.zip                          " general stuff
+set wildignore=*.swp,*.zip                                  " general stuff
 set wildignore+=*.so,*.lo,*.o,*.a                           " C/C++
-set wildignore+=autom4te.cache,aclocal.m4,config.log        " autotools (cont.)
+set wildignore+=autom4te.cache,aclocal.m4,config.log        " autotools
 set wildignore+=config.status,depcomp,install-sh            " autotools (cont.)
 set wildignore+=Makefile.in,missing                         " autotools (cont.)
 
