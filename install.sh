@@ -39,6 +39,16 @@ fi
 echo "[include]
   path = ~/.dotfiles/gitconfig" > $HOME/.gitconfig
 
+# Install hgrc
+if [ -f "$HOME/.hgrc" ]; then
+  if [ -f "$HOME/.hgrc.bkp" ]; then
+    rm -f "$HOME/.hgrc.bkp"
+  fi
+  cp "$HOME/.hgrc" "$HOME/.hgrc.bkp"
+fi
+echo "
+%include ~/.dotfiles/mercurial/hgrc" >> $HOME/.hgrc
+
 # Install tmux.conf
 if [ -f "$HOME/.tmux.conf" ]; then
   if [ -f "$HOME/.tmux.conf.bkp" ]; then

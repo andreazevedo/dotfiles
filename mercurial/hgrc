@@ -1,0 +1,12 @@
+[extensions]
+color =
+graphlog =
+pager =
+
+[alias]
+l = log --style=$HOME/.dotfiles/mercurial/log-template.lg
+gl = glog --style=$HOME/.dotfiles/mercurial/log-template.lg
+
+[pager]
+pager = LESS='FSRX' less
+attend = cat, diff, glog, log, incoming, outgoing, lg, show, l, gl

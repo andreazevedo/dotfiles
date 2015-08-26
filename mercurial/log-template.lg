@@ -1,0 +1,12 @@
+changeset = '\033[0;34m{date|date} \033[33m{node|short}:{phase}\033[32m{branches}{bookmarks}{tags} \033[0;34m{desc|firstline|strip} \033[35m[{author|person}]\n'
+
+start_branches = ' '
+branch = '{branch}'
+
+start_bookmarks = ' '
+bookmark = '{bookmark} '
+last_bookmark = '{bookmark}'
+
+start_tags = ' '
+tag = '{tag} '
+last_tag = '{tag}'
