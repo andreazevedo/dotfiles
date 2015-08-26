@@ -23,3 +23,9 @@ Nice and sane configuration is provided with `tmux.conf`, including:
  - Powerful status bar (see [screenshot](#screenshot)).
  - Screen like binding (`Ctrl-a` instead of `Ctrl-b` as the prefix).
  - vim keybindings.
+
+### Mercurial configuration
+
+Sane defaults and some nice and pretty alias:
+ - `hg l`: similar to `hg log`, but with nice format and colors.
+ - `hg gl`: similar to `hg glog`, but also with nice format and colors.
