@@ -129,7 +129,7 @@ set undodir^=~/.vim/undo
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nmap <leader>nm :NERDTreeFind<CR>
 let g:NERDTreeRespectWildIgnore=1
 
