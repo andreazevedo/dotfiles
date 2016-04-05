@@ -66,6 +66,7 @@ Bundle 'tpope/vim-dispatch'
 """"""""""""""""""""""""" 
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/c.vim'
+Bundle 'pangloss/vim-javascript'
 
 " All plugins must be added before the following line
 call vundle#end()		" required
