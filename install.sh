@@ -7,10 +7,10 @@ if [ ! -d "$HOME/.dotfiles" ]; then
   echo "Installing dependencies."
   if hash brew 2> /dev/null; then
     brew update
-    brew install git cmake macvim
+    brew install git cmake macvim clang-format
   elif hash apt-get 2> /dev/null; then
     sudo apt-get update
-    sudo apt-get install git cmake build-essential python-dev
+    sudo apt-get install git cmake build-essential python-dev clang-format
   elif hash yum 2> /dev/null; then
     sudo yum install git cmake vim gcc clang
   fi

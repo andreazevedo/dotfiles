@@ -37,6 +37,9 @@ Bundle 'godlygeek/tabular'
 " Solarized color scheme
 Bundle 'altercation/vim-colors-solarized'
 
+" Clang format plugin
+Bundle 'rhysd/vim-clang-format'
+
 
 " Coding "
 """"""""""
@@ -156,3 +159,6 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
+
+" Clang format
+map <C-k> :ClangFormat<CR>
