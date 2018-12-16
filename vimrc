@@ -113,11 +113,13 @@ set incsearch      " enable incremental search
 set hlsearch       " enable search highlighting
 
 " Files to be ignored by VIM, including NERDTree and CtrlP plugings
-set wildignore=*.swp,*.zip                                  " general stuff
-set wildignore+=*.so,*.lo,*.o,*.a                           " C/C++
-set wildignore+=autom4te.cache,aclocal.m4,config.log        " autotools
-set wildignore+=config.status,depcomp,install-sh            " autotools (cont.)
-set wildignore+=Makefile.in,missing                         " autotools (cont.)
+set wildignore=*.swp,*.zip                            " general stuff
+set wildignore+=*.so,*.lo,*.o,*.a                     " C/C++
+set wildignore+=autom4te.cache,aclocal.m4,config.log  " autotools
+set wildignore+=config.status,depcomp,install-sh      " autotools (cont.)
+set wildignore+=Makefile.in,missing                   " autotools (cont.)
+set wildignore+=cmake_install.cmake                   " cmake
+set wildignore+=CMakeFiles,CMakeCache.txt             " cmake (cont.)
 
 " Sets a maximum number of columns
 set colorcolumn=81 " absolute columns to highlight "
