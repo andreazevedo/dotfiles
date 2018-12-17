@@ -120,6 +120,7 @@ set wildignore+=config.status,depcomp,install-sh      " autotools (cont.)
 set wildignore+=Makefile.in,missing                   " autotools (cont.)
 set wildignore+=cmake_install.cmake                   " cmake
 set wildignore+=CMakeFiles,CMakeCache.txt             " cmake (cont.)
+set wildignore+=CTestTestfile.cmake                   " cmake (cont.)
 set wildignore+=Testing                               " gtest
 
 " Sets a maximum number of columns
