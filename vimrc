@@ -40,6 +40,9 @@ Bundle 'altercation/vim-colors-solarized'
 " Clang format plugin
 Bundle 'rhysd/vim-clang-format'
 
+" Git wrapper
+Bundle 'tpope/vim-fugitive'
+
 
 " Coding "
 """"""""""
