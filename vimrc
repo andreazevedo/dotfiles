@@ -43,6 +43,9 @@ Bundle 'rhysd/vim-clang-format'
 " Git wrapper
 Bundle 'tpope/vim-fugitive'
 
+" GitHub plugin for the vim-fugitive plugin
+Bundle 'tpope/vim-rhubarb'
+
 
 " Coding "
 """"""""""
