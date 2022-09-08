@@ -71,7 +71,7 @@ Bundle 'vim-scripts/a.vim'
 Bundle 'tpope/vim-dispatch'
 
 " code completition
-Bubdle 'ycm-core/YouCompleteMe'
+Bundle 'ycm-core/YouCompleteMe'
 
 
 " Programming Languages "
