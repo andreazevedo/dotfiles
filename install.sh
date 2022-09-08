@@ -10,9 +10,9 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     brew install git cmake macvim clang-format
   elif hash apt-get 2> /dev/null; then
     sudo apt-get update
-    sudo apt-get install git cmake build-essential python-dev clang-format
+    sudo apt-get install git cmake build-essential python-dev clang-format vim-nox python3-dev
   elif hash yum 2> /dev/null; then
-    sudo yum install git cmake vim gcc clang
+    sudo yum install git cmake vim gcc clang python3-devel cmake3
   fi
 
   git clone https://github.com/andreazevedo/dotfiles.git "$HOME/.dotfiles"
@@ -73,6 +73,11 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
 fi
 echo "Installing vim plugins. This may take some time."
 vim +PluginInstall +qall
+
+# Install YouCompleteMe
+echo "Installing YouCompleteMe."
+cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --clangd-completer
 
 # Finishing
 echo "dotfiles installed successfully!"

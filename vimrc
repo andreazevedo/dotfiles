@@ -70,6 +70,9 @@ Bundle 'vim-scripts/a.vim'
 " Asynchronous build and test dispatcher
 Bundle 'tpope/vim-dispatch'
 
+" code completition
+Bubdle 'ycm-core/YouCompleteMe'
+
 
 " Programming Languages "
 """"""""""""""""""""""""" 
