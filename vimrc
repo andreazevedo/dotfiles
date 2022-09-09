@@ -135,6 +135,7 @@ set wildignore+=CMakeFiles,CMakeCache.txt             " cmake (cont.)
 set wildignore+=CTestTestfile.cmake                   " cmake (cont.)
 set wildignore+=Testing                               " gtest
 set wildignore+=bazel-*                               " bazel
+set wildignore+=external                              " bazel
 
 " Sets a maximum number of columns
 set colorcolumn=81 " absolute columns to highlight "
