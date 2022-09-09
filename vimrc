@@ -73,6 +73,9 @@ Bundle 'tpope/vim-dispatch'
 " code completition
 Bundle 'ycm-core/YouCompleteMe'
 
+" ycm with bazel
+Bundle 'grailbio/bazel-compilation-database'
+
 
 " Programming Languages "
 """"""""""""""""""""""""" 
