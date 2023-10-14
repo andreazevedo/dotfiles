@@ -76,9 +76,6 @@ Bundle 'ycm-core/YouCompleteMe'
 " ycm with bazel
 Bundle 'grailbio/bazel-compilation-database'
 
-" Makes js code beatiful
-Bundle 'maksimr/vim-jsbeautify'
-
 
 " Programming Languages "
 """"""""""""""""""""""""" 
