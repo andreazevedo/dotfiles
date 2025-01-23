@@ -10,9 +10,9 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     brew install git cmake macvim clang-format
   elif hash apt-get 2> /dev/null; then
     sudo apt-get update
-    sudo apt-get install git cmake build-essential python-dev clang-format vim-nox python3-dev
+    sudo apt-get install git cmake build-essential python-dev clang-format python3-dev
   elif hash yum 2> /dev/null; then
-    sudo yum install git cmake vim gcc clang python3-devel cmake3
+    sudo yum install git cmake gcc clang python3-devel cmake3
   fi
 
   git clone https://github.com/andreazevedo/dotfiles.git "$HOME/.dotfiles"
@@ -57,27 +57,6 @@ if [ -f "$HOME/.tmux.conf" ]; then
   mv "$HOME/.tmux.conf" "$HOME/.tmux.conf.bkp"
 fi
 echo source \$HOME/.dotfiles/tmux.conf > $HOME/.tmux.conf
-
-# Install vimrc
-if [ -f "$HOME/.vimrc" ]; then
-  if [ -f "$HOME/.vimrc.bkp" ]; then
-    rm -f "$HOME/.vimrc.bkp"
-  fi
-  mv "$HOME/.vimrc" "$HOME/.vimrc.bkp"
-fi
-echo source \$HOME/.dotfiles/vimrc > $HOME/.vimrc
-
-# Install vim plugins
-if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
-  git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-fi
-echo "Installing vim plugins. This may take some time."
-vim +PluginInstall +qall
-
-# Install YouCompleteMe
-echo "Installing YouCompleteMe."
-cd ~/.vim/bundle/YouCompleteMe
-python3 install.py --clangd-completer
 
 # Finishing
 echo "dotfiles installed successfully!"
