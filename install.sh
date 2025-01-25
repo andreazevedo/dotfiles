@@ -10,9 +10,9 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     brew install git cmake macvim clang-format
   elif hash apt-get 2> /dev/null; then
     sudo apt-get update
-    sudo apt-get install git cmake build-essential python-dev clang-format python3-dev
+    sudo apt-get install git cmake build-essential python-dev clang-format python3-dev clangd
   elif hash yum 2> /dev/null; then
-    sudo yum install git cmake gcc clang python3-devel cmake3
+    sudo yum install git cmake gcc clang python3-devel cmake3 clangd
   fi
 
   git clone https://github.com/andreazevedo/dotfiles.git "$HOME/.dotfiles"
