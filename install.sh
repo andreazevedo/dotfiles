@@ -58,5 +58,15 @@ if [ -f "$HOME/.tmux.conf" ]; then
 fi
 echo source \$HOME/.dotfiles/tmux.conf > $HOME/.tmux.conf
 
+# Install nvimrc
+mkdir $HOME/.config/nvim
+if [ -f "$HOME/.config/nvim/init.lua" ]; then
+  if [ -f "$HOME/.config/nvim/init.lua.bkp" ]; then
+    rm -f "$HOME/.config/nvim/init.lua.bkp"
+  fi
+  mv "$HOME/.config/nvim/init.lua.bkp" "$HOME/.config/nvim/init.lua.bkp"
+fi
+echo 'dofile("\$HOME/.dotfiles/nvim/init.lua"' > $HOME/.config/nvim/init.lua
+
 # Finishing
 echo "dotfiles installed successfully!"
