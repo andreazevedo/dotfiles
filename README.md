@@ -13,6 +13,20 @@ Simple dotfiles that includes mainly `vim`, `bash` and `tmux` stuff.
 sh -c "`curl -fsSL https://raw.github.com/andreazevedo/dotfiles/master/install.sh`"
 ```
 
+### Fonts for neovim
+
+If using neovim via ssh, you have to install NerdFonts to see the cool icons in
+the neo-tree:
+
+```bash
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
+unzip JetBrainsMono.zip
+
+fc-cache -fv
+```
+
 ## What's included?
 
 Read on and find out!
