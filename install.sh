@@ -66,7 +66,8 @@ if [ -f "$HOME/.config/nvim/init.lua" ]; then
   fi
   mv "$HOME/.config/nvim/init.lua.bkp" "$HOME/.config/nvim/init.lua.bkp"
 fi
-echo 'dofile("\$HOME/.dotfiles/nvim/init.lua"' > $HOME/.config/nvim/init.lua
+echo "dofile(\"$HOME/.dotfiles/nvim/init.lua\"" > $HOME/.config/nvim/init.lua
+ln -s "$HOME/.dotfiles/nvim/lua/" "$HOME/.config/nvim/lua"
 
 # Finishing
 echo "dotfiles installed successfully!"

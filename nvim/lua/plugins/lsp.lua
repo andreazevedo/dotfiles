@@ -62,6 +62,11 @@ return {
       local luasnip = require("luasnip")
 
       cmp.setup({
+				mapping = cmp.mapping.preset.insert({
+					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+					["<Tab>"] = cmp.mapping.confirm({ select = true }),
+					["<Cr>"] = cmp.mapping.confirm({ select = true }),
+				}),
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
