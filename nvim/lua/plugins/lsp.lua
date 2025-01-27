@@ -22,6 +22,11 @@ return {
       vim.lsp.protocol.make_client_capabilities(),
       cmp_lsp.default_capabilities())
 
+    local on_attach = function(_, bufnr)
+      local opts = { buffer = bufnr, noremap = true, silent = true }
+      vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    end
+
     require("fidget").setup({})
     require("mason").setup()
     require("mason-lspconfig").setup({
@@ -33,7 +38,8 @@ return {
       handlers = {
         function(server_name) -- default handler (optional)
           require("lspconfig")[server_name].setup {
-            capabilities = capabilities
+            capabilities = capabilities,
+            on_attach = on_attach,
           }
         end,
 
@@ -56,6 +62,7 @@ return {
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
             capabilities = capabilities,
+            on_attach = on_attach,
             settings = {
               Lua = {
                 runtime = { version = "Lua 5.1" },
