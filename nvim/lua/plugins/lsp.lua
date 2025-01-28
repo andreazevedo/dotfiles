@@ -24,7 +24,11 @@ return {
 
     local on_attach = function(_, bufnr)
       local opts = { buffer = bufnr, noremap = true, silent = true }
+
+      -- Remaps
       vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+      vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, opts)
+      vim.keymap.set('i', 'C-h', vim.lsp.buf.signature_help, opts)
     end
 
     require("fidget").setup({})
