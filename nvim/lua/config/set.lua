@@ -1,8 +1,9 @@
 vim.opt.nu = true
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.expandtab = true    -- Convert tabs to spaces
+vim.opt.tabstop = 2         -- Number of spaces for a tab
+vim.opt.shiftwidth = 2      -- Number of spaces for indentation
+vim.opt.softtabstop = 2     -- Number of spaces when editing
 
 vim.opt.wrap = false
 
