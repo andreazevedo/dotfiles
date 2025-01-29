@@ -20,6 +20,9 @@ if [ ! -d "$HOME/.dotfiles" ]; then
 fi
 
 
+# Install necessary npm packets
+sudo npm install -g prettier
+
 # Install bashrc
 if [ -f "$HOME/.bashrc" ]; then
   if [ -f "$HOME/.bashrc.bkp" ]; then
