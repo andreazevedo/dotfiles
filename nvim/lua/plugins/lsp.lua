@@ -39,6 +39,7 @@ return {
           "clangd",
           "rust_analyzer",
           "ts_ls",
+          "bzl",
       },
       handlers = {
         function(server_name) -- default handler (optional)
@@ -86,6 +87,15 @@ return {
             -- any specific settings you want
           })
         end,
+        ["bzl"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.bzl.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { "bzl", "bazel" },
+            root_dir = lspconfig.util.root_pattern("WORKSPACE", "WORKSPACE.bazel"),
+          })
+        end,
       }
     })
 
@@ -123,5 +133,12 @@ return {
         prefix = "",
       },
     })
+
+    -- Make sure BUILD files are recognized as "bzl" files.
+    vim.cmd[[
+      au BufRead,BufNewFile BUILD set filetype=bzl
+      au BufRead,BufNewFile BUILD.bazel set filetype=bzl
+      au BufRead,BufNewFile *.bzl set filetype=bzl
+    ]]
   end
 }

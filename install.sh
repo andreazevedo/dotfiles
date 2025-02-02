@@ -21,7 +21,7 @@ fi
 
 
 # Install necessary npm packets
-sudo npm install -g prettier
+npm install -g typescript-language-server typescript prettier
 
 # Install bashrc
 if [ -f "$HOME/.bashrc" ]; then
