@@ -12,6 +12,9 @@ return {
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
       json = { "prettier" },
+
+      -- Python
+      python = { "yapf" },
     },
     format_on_save = false,
   },
@@ -21,7 +24,7 @@ return {
       function()
         require("conform").format()
       end,
-      desc = "Format with clang-format",
+      desc = "Format with conform",
     },
   },
 }

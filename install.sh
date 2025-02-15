@@ -10,9 +10,9 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     brew install git cmake macvim clang-format
   elif hash apt-get 2> /dev/null; then
     sudo apt-get update
-    sudo apt-get install git cmake build-essential python-dev clang-format python3-dev clangd clang-format npm
+    sudo apt-get install git cmake build-essential python-dev clang-format python3-dev clangd clang-format npm python3-pip pipx
   elif hash yum 2> /dev/null; then
-    sudo yum install git cmake gcc clang python3-devel cmake3 clangd clang-format npm
+    sudo yum install git cmake gcc clang python3-devel cmake3 clangd clang-format npm python3-pip pipx
   fi
 
   git clone https://github.com/andreazevedo/dotfiles.git "$HOME/.dotfiles"
@@ -22,6 +22,9 @@ fi
 
 # Install necessary npm packets
 npm install -g typescript-language-server typescript prettier
+
+# Install necessary python packets
+pipx install yapf
 
 # Install bashrc
 if [ -f "$HOME/.bashrc" ]; then
