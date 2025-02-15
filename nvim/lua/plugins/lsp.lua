@@ -40,9 +40,10 @@ return {
           "rust_analyzer",
           "ts_ls",
           "bzl",
+          "pyright",
       },
       handlers = {
-        function(server_name) -- default handler (optional)
+        function(server_name)
           require("lspconfig")[server_name].setup {
             capabilities = capabilities,
             on_attach = on_attach,
@@ -94,6 +95,23 @@ return {
             on_attach = on_attach,
             filetypes = { "bzl", "bazel" },
             root_dir = lspconfig.util.root_pattern("WORKSPACE", "WORKSPACE.bazel"),
+          })
+        end,
+        ["pyright"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.pyright.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+              python = {
+                analysis = {
+                  autoSearchPaths = true,
+                  diagnosticMode = "workspace",
+                  useLibraryCodeForTypes = true,
+                  typeCheckingMode = "basic"
+                }
+              }
+            }
           })
         end,
       }
