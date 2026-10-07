@@ -132,6 +132,8 @@ return {
 
     vim.diagnostic.config({
       -- update_in_insert = true,
+      virtual_text = true, -- off by default since Neovim 0.11
+      severity_sort = true,
       float = {
         focusable = false,
         style = "minimal",
