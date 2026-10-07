@@ -30,6 +30,20 @@ return {
       vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, opts)
     end
 
+    -- mason-lspconfig v2 ignores `handlers` and enables servers via
+    -- vim.lsp.enable, so per-server config must go through vim.lsp.config.
+    vim.lsp.config("rust_analyzer", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = { allFeatures = true },
+          check = { command = "clippy" },
+          procMacro = { enable = true },
+        }
+      }
+    })
+
     require("fidget").setup({})
     require("mason").setup()
     require("mason-lspconfig").setup({

@@ -6,6 +6,9 @@ return {
       c = { "clang_format" },
       cpp = { "clang_format" },
 
+      -- Rust
+      rust = { "rustfmt" },
+
       -- Javascript
       javascript = { "prettier" },
       javascriptreact = { "prettier" },
