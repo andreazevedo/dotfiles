@@ -1,24 +1,37 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
     config = function()
-        require("nvim-treesitter.configs").setup({
-            -- A list of parser names, or "all" (supported parsers)
-            ensure_installed = { "lua", "vim", "vimdoc", "javascript", "python", "c", "rust" },
+        local ts = require("nvim-treesitter")
 
-            -- Install parsers synchronously (only applied to `ensure_installed`)
-            sync_install = false,
+        ts.install({ "lua", "vim", "vimdoc", "javascript", "python", "c", "rust" })
 
-            -- Automatically install missing parsers when entering buffer
-            auto_install = true,
+        -- Enable highlighting for every filetype with a parser, installing
+        -- missing parsers on demand (replaces master's auto_install).
+        local available = {}
+        for _, lang in ipairs(ts.get_available()) do
+            available[lang] = true
+        end
 
-            highlight = {
-                enable = true,
-
-                -- Or use a function for more flexibility
-                additional_vim_regex_highlighting = false,
-            },
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function(args)
+                local lang = vim.treesitter.language.get_lang(args.match)
+                if not lang then
+                    return
+                end
+                if pcall(vim.treesitter.start, args.buf, lang) then
+                    return
+                end
+                if available[lang] then
+                    ts.install({ lang }):await(vim.schedule_wrap(function()
+                        if vim.api.nvim_buf_is_valid(args.buf) then
+                            pcall(vim.treesitter.start, args.buf, lang)
+                        end
+                    end))
+                end
+            end,
         })
     end
 }
