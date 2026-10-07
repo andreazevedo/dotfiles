@@ -52,7 +52,6 @@ return {
           "clangd",
           "rust_analyzer",
           "ts_ls",
-          "bzl",
           "pyright",
       },
       handlers = {
