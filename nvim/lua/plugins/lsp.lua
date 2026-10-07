@@ -32,9 +32,31 @@ return {
 
     -- mason-lspconfig v2 ignores `handlers` and enables servers via
     -- vim.lsp.enable, so per-server config must go through vim.lsp.config.
+    local default_rust_root_dir = vim.lsp.config.rust_analyzer.root_dir
     vim.lsp.config("rust_analyzer", {
       capabilities = capabilities,
       on_attach = on_attach,
+      -- Outside a Cargo project the default root is nil and rust-analyzer
+      -- analyzes nothing; fall back to the file's directory so standalone
+      -- .rs files get diagnostics and completion.
+      root_dir = function(bufnr, on_dir)
+        default_rust_root_dir(bufnr, function(dir)
+          on_dir(dir or vim.fs.dirname(vim.api.nvim_buf_get_name(bufnr)))
+        end)
+      end,
+      -- With no Cargo.toml or rust-project.json, rust-analyzer fails to
+      -- discover a workspace; link the directory's .rs files as standalone
+      -- files instead.
+      before_init = function(params, config)
+        local root = config.root_dir
+        if not root or vim.fs.root(root, { "Cargo.toml", "rust-project.json" }) then
+          return
+        end
+        local ra = config.settings["rust-analyzer"]
+        ra.linkedProjects = vim.fn.glob(root .. "/*.rs", false, true)
+        ra.checkOnSave = false -- cargo check needs a Cargo.toml
+        params.initializationOptions = ra
+      end,
       settings = {
         ["rust-analyzer"] = {
           cargo = { allFeatures = true },
